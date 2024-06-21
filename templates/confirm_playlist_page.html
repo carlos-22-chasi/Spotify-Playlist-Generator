@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Playlist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='confirm_playlist_page.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Playlist Created Successfully!</h1>
+        <p>Playlist '<strong>{{ playlist_name }}</strong>' was created successfully. <a href="{{ playlist_url }}" target="_blank">View Playlist</a></p>
+        <p>Would you like to keep or delete the playlist?</p>
+        <form action="/confirm_action" method="post">
+            <input type="hidden" name="playlist_id" value="{{ playlist_id }}">
+            <button type="submit" name="action" value="keep" class="button button-keep">Keep</button>
+            <button type="submit" name="action" value="delete" class="button button-delete">Delete</button>
+        </form>
+    </div>
+</body>
+</html>

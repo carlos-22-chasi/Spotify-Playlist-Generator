@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_success.css') }}">
+    <script>
+        // Redirect to the build_playlist page after 3 seconds
+        setTimeout(function(){
+            window.location.href = "{{ url_for('build_playlist') }}";
+        }, 3000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Successful</h1>
+        <p>You have successfully logged in with Spotify.</p>
+        <p>Follow steps in terminal to build recommended playlist</p>
+    </div>
+</body>
+</html>
